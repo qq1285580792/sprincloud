@@ -5,7 +5,7 @@ sp:
     {\"id\":9, \"username\":\"ghi\",\"password\":\"789\"},
     {\"id\":99, \"username\":\"aaa\",\"password\":\"111\"},
     {\"id\":100, \"username\":\"bbb\",\"password\":\"222\"},
-    {\"id\":101, \"username\":\"ccc\",\"password\":\"333\"},]"
+    {\"id\":101, \"username\":\"ccc\",\"password\":\"333\"}]"
 
 
 spring:
