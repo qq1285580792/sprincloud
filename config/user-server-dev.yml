@@ -8,7 +8,7 @@ spring:
     name: user-service
   cloud:
     config:
-      overwrite-none: ture
+      override-none: ture
 server:
   port: 8101
   
