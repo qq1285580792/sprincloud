@@ -4,15 +4,20 @@ spring:
   cloud:
     config:
       override-none: ture
-server:  port: 3001
+server:
+  port: 3001
   
-eureka:  client:    service-url:      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
 
 # 榛樿杞彂鍙戣鍒�, 鏈�濂借嚜宸辨墜鍔ㄩ厤缃�
 # 鑷姩閰嶇疆鏄粠eureka鑾峰彇娉ㄥ唽琛�,鏍规嵁娉ㄥ唽琛ㄨ嚜鍔ㄩ厤缃�
 # 濡傛灉浠巈ureka鑾峰彇涓嶅埌涓�涓湇鍔＄殑娉ㄥ唽淇℃伅,灏辨棤娉曞畬鎴愯嚜鍔ㄩ厤缃�
 zuul:
-  routes:    item-service: /item-service/**
+  routes:
+    item-service: /item-service/**
     user-service: /user-service/**
     order-service: /order-service/**
 
@@ -21,6 +26,9 @@ zuul:
 ribbon:
   MaxAutoRetries: 1
   
+turbine:
+  app-config: order-service, zuul
+  cluster-name-expression: new String("default")
 
 hystrix:
   command:
@@ -30,5 +38,9 @@ hystrix:
           thread:
             timeoutInMilliseconds: 500
 
-management:  endpoints:    web:      exposure:        include: hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
