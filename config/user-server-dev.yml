@@ -9,7 +9,8 @@ spring:
   cloud:
     config:
       override-none: ture
-server:  port: 8101
+server:
+  port: 8101
   
 eureka:
   client:
@@ -17,3 +18,9 @@ eureka:
       # 默认地点, 要由公共云服务来提供
       # 如果是私有服务器, 必须写 defaultZone
       defaultZone: http://eureka1:2001/eureka
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
