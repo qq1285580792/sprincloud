@@ -4,7 +4,15 @@ spring:
   cloud:
     config:
       override-none: ture
-server:  port: 8201
+  rabbitmq:
+    host: 192.168.64.140
+    port: 5672
+    username: admin
+    password: admin
+      
+server:
+  port: 8201
+  
   
 eureka:
   client:
@@ -13,9 +21,15 @@ eureka:
       # 如果是私有服务器, 必须写 defaultZone
       defaultZone: http://eureka1:2001/eureka
       
-feign:  hystrix:    enabled: true  # 不推荐
+feign:
+  hystrix:
+    enabled: true  # 不推荐
     
-management:  endpoints:    web:      exposure:        include: hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
 
 
