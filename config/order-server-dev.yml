@@ -3,7 +3,7 @@ spring:
     name: order-service
   cloud:
     config:
-      override-none: ture
+      override-none: true
   rabbitmq:
     host: 192.168.64.140
     port: 5672
