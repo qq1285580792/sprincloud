@@ -2,6 +2,11 @@
 # Yet Another Markup Language
 
 spring:
+  rabbitmq:
+    host: 192.168.64.3
+    port: 5672
+    username: admin
+    password: admin
   application:
     name: item-service
   cloud:
